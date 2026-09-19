@@ -7,6 +7,7 @@ import logging
 from io import StringIO
 import pickle
 
+
 class DiabetesPredictor:
     def __init__(self):
         self.model = None
@@ -19,7 +20,7 @@ class DiabetesPredictor:
                 # assume the model file name as model.pkl
                 model_repo = os.environ['MODEL_REPO']
                 file_path = os.path.join(model_repo, "model.pkl")
-                self.model =  pickle.load(open(file_path, 'rb'))
+                self.model = pickle.load(open(file_path, 'rb'))
             except KeyError:
                 print("MODEL_REPO is undefined")
                 # Otherwise, use the local model (in prediction-api folder)

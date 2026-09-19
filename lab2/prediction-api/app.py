@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/diabetes_predictor', methods=['POST']) # path of the endpoint. Except only HTTP POST request
+@app.route('/diabetes_predictor', methods=['POST'])  # path of the endpoint. Except only HTTP POST request
 def predict_str():
     # the prediction input data in the message body as a JSON payload
     prediction_inout = request.get_json()
@@ -20,4 +20,3 @@ dp = DiabetesPredictor()
 # script. See https://realpython.com/if-name-main-python/
 if __name__ == '__main__':
     app.run(port=int(os.getenv("PORT", 5000)), host='0.0.0.0', debug=True)
-
