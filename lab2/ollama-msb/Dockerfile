@@ -5,12 +5,12 @@ ENV APP_HOME=/home
 
 WORKDIR $APP_HOME
 
-#copy the start script
+# Copy the pull-llm.sh script, which downloads an LLM model via Ollama
 COPY . .
 
-# Change the permission of the start script
+# Change the permission of the copied script
 RUN chmod +x pull-llm.sh
-
+# Execute the script 
 RUN ./pull-llm.sh
 
 # Final image
